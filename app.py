@@ -1,5 +1,46 @@
 
 import streamlit as st
+st.set_page_config(
+
+    page_title="ネイティブ英語翻訳AI",
+
+    page_icon="🌐",
+
+    layout="centered"
+
+)
+
+st.markdown("""
+
+<style>
+
+.stApp {
+
+    background-color: #0f1117;
+
+    color: white;
+
+}
+
+textarea, input {
+
+    border-radius: 18px !important;
+
+}
+
+.stButton button {
+
+    border-radius: 16px;
+
+    height: 50px;
+
+    font-size: 18px;
+
+}
+
+</style>
+
+""", unsafe_allow_html=True)
 from openai import OpenAI
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
