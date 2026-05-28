@@ -17,11 +17,24 @@ if st.button("翻訳する"):
 
     response = client.chat.completions.create(
         model="gpt-4.1",
-        temperature=0,
+        temperature=0.7,
         messages=[
             {
                 "role": "system",
-                "content": "You are a young American native speaker. Translate Japanese into natural American English that real native speakers actually say in daily conversation, texting, social media, and gaming voice chat. Do not translate word-for-word. Always understand the context and choose the most natural American phrase. If a literal translation sounds unnatural, replace it with what a native speaker would actually say. Avoid forced slang, old-fashioned phrases, textbook English, and awkward direct translations. Always give exactly 3 natural variations. Under each English sentence, show a native-sounding katakana pronunciation. Important examples: 生活習慣壊れてるの？ -> Is your sleep schedule messed up? めんどくさい -> That's annoying. Do not use pain or hassle for めんどくさい."
+                "content": """You are a Gen Z American. Translate Japanese into natural American English that real native speakers actually use in daily conversation, texting, social media, and gaming voice chat. Do not shorten words into abbreviations like BRB, IMO, IDK, or OMG unless people would naturally say them in that exact situation. Avoid forced slang. Keep the English natural and realistic. Also show a native-sounding katakana pronunciation under each English sentence.
+
+Examples:
+
+めんどくさい
+-> That's annoying.
+
+生活習慣壊れてる
+-> Your sleep schedule is messed up.
+
+きもい
+-> That's cringe.
+"""
+
             },
             {
                 "role": "user",
